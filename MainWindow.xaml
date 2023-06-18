@@ -14,7 +14,7 @@
         <Button x:Name="btnCanAlert" Content="Button" HorizontalAlignment="Left" Margin="229,217,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cmbhour" HorizontalAlignment="Left" Margin="303,217,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="cmbmin" HorizontalAlignment="Left" Margin="428,217,0,0" VerticalAlignment="Top" Width="120"/>
-        <MediaElement x:Name="medsound" HorizontalAlignment="Left" Height="100" Margin="588,217,0,0" VerticalAlignment="Top" Width="100"/>
+        <MediaElement x:Name="medsound" HorizontalAlignment="Left" Height="100" Margin="588,217,0,0" VerticalAlignment="Top" Width="100" Source="/alert.wav" Volume="1"/>
 
     </Grid>
 </Window>

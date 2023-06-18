@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="txtTime" HorizontalAlignment="Left" Margin="182,76,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtTime" HorizontalAlignment="Left" Margin="182,76,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="txtTime_TextChanged"/>
         <TextBox x:Name="txtWeekDay" HorizontalAlignment="Left" Margin="400,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtDate" HorizontalAlignment="Left" Margin="182,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnSetAlert" Content="Button" HorizontalAlignment="Left" Margin="163,217,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnCanAlert" Content="Button" HorizontalAlignment="Left" Margin="229,217,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnSetAlert" Content="設定鬧鐘" HorizontalAlignment="Left" Margin="163,217,0,0" VerticalAlignment="Top" Click="btnSetAlert_Click"/>
+        <Button x:Name="btnCanAlert" Content="取消鬧鐘" HorizontalAlignment="Left" Margin="229,217,0,0" VerticalAlignment="Top" Click="btnCanAlert_Click"/>
         <ComboBox x:Name="cmbhour" HorizontalAlignment="Left" Margin="303,217,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="cmbmin" HorizontalAlignment="Left" Margin="428,217,0,0" VerticalAlignment="Top" Width="120"/>
         <MediaElement x:Name="medsound" HorizontalAlignment="Left" Height="100" Margin="588,217,0,0" VerticalAlignment="Top" Width="100" Source="/alert.wav" Volume="1"/>

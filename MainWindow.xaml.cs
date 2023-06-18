@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading; // 要加入這段才能使用計時器
 
 namespace timer
 {
@@ -22,6 +23,7 @@ namespace timer
     {
         List<string> hours = new List<string>();            // 小時清單
         List<string> minutes = new List<string>();          // 分鐘清單
+        DispatcherTimer timer = new DispatcherTimer();      // 宣告一個「時鐘」計時器
         public MainWindow()
         {
             InitializeComponent();
@@ -36,6 +38,19 @@ namespace timer
             cmbhour.ItemsSource = hours;
             // 設定分鐘下拉選單的選單內容
             cmbmin.ItemsSource = minutes;
+
+            // 設定「時鐘」計時器  
+            timer.Interval = TimeSpan.FromSeconds(1);   // 這個計時器設定每一個刻度為1秒
+            timer.Tick += new EventHandler(timer_tick); // 每一個時間刻度設定一個小程序timer_tick
+            timer.Start(); // 啟動這個計時器
+        }
+
+        // timer_tick事件：每一秒執行一次
+        private void timer_tick(object sender, EventArgs e)
+        {
+            txtTime.Text = DateTime.Now.ToString("HH:mm:ss");    // 顯示時間
+            txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");  // 顯示日期
+            txtWeekDay.Text = DateTime.Now.ToString("dddd");     // 顯示星期幾
         }
     }
 }
